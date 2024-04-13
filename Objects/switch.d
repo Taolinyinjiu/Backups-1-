@@ -2,7 +2,7 @@
 .\objects\switch.o: Hardware\Switch.h
 .\objects\switch.o: .\User\stm32f4xx.h
 .\objects\switch.o: .\Core\core_cm4.h
-.\objects\switch.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\switch.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\switch.o: .\Core\core_cmInstr.h
 .\objects\switch.o: .\Core\core_cmFunc.h
 .\objects\switch.o: .\Core\core_cm4_simd.h

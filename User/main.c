@@ -62,6 +62,10 @@ float C_bisic = 384;
 float target_Height = 0;
 unsigned int counter = 0;
 unsigned char counter_flag = 0;
+
+unsigned int Keep_flag;
+unsigned char Keep_time;
+
 unsigned int task_time = 0;
 extern float number;
 extern unsigned char PID_Sub;
@@ -152,7 +156,7 @@ void Task1_2(float *p, unsigned char *sub)
 	integral1 = 0;
 	counter = 0;
 	*p = 309;
-	*sub = 0;
+	*sub = 0;//第一个参
 	counter_flag = 1;
 	tick = 1 ;
 	//	TIM_SetCompare1(TIM11, PwmVal);
@@ -165,8 +169,11 @@ void Task3(float *p, unsigned char *sub)
 		counter = 0;
 		*p = 999;
 	}
+	err[0] = 0;
+	err[1] = 0;
+	err[2] = 0;
 	counter_flag = 1;
-	*sub = 3;
+	*sub = 3;//第四个参
 	if (Key_Read() == 1)
 	{
 		delay_ms(100);
@@ -199,9 +206,12 @@ void Task4(float *p, unsigned char *sub)
 {
 	if (tick == 3)
 		return;
+	err[0] = 0;
+	err[1] = 0;
+	err[2] = 0;
 	counter = 0;
-	*p = 84;
-	*sub = 1;
+	*p = 75;
+	*sub = 1;//第二个参
 	counter_flag = 1;
 	tick = 3;
 	//	TIM_SetCompare1(TIM11, PwmVal);
@@ -213,7 +223,7 @@ void Task6(float *p, unsigned char *sub)
 		return;
 	unsigned int time_temp = 0;
 	counter = 0;
-	*sub = 2;
+	*sub = 2;//第三个参
 	counter_flag = 1;
 	*p = 159;
 	time_temp = counter;
@@ -221,17 +231,17 @@ void Task6(float *p, unsigned char *sub)
 		;
 	*p = 459;
 	time_temp = counter;
-	while (counter - time_temp <= 9)
-		;
-	*p = 159;
-	time_temp = counter;
-	while (counter - time_temp <= 9)
-		;
-	*p = 459;
-	time_temp = counter;
-	while (counter - time_temp <= 9)
-		;
-	*p = 0;
+//	while (counter - time_temp <= 9)
+//		;
+//	*p = 159;
+//	time_temp = counter;
+//	while (counter - time_temp <= 9)
+//		;
+//	*p = 459;
+//	time_temp = counter;
+//	while (counter - time_temp <= 9)
+//		;
+//	*p = 0;
 	tick = 4;
 }
 
@@ -351,3 +361,4 @@ void Task_Choose(uint8_t ID)
 		break;
 	}
 }
+

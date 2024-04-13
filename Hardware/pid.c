@@ -10,13 +10,20 @@ int errmin = -530;
 
 unsigned char PID_Sub = 0;
 
+
+
 //float Kp[6] = {-0.802,   };
 //float Ki[6] = {-0.0081, };
 //float Kd[6] = {-24,  };
 
-float Kp[6] = {-2.5,  -2.1,   -2.5,   -2.4 	};
-float Ki[6] = {-0.01, -0.004, -0.006, -0.01	};
-float Kd[6] = {-30,   -28,  	-35,    -60 	};
+float Kp[6] = {-2.1,  -2.0,   -2.2,   -2.4 	};//3:-1.75,-0.01,-15.0
+float Ki[6] = {-0.01, -0.01, -0.01, -0.0	};
+float Kd[6] = {-46.0,   -50, -15.0,    -60 	};
+
+
+//float Kp[6] = {-2.5,  -2.1,   -2.5,   -2.4 	};
+//float Ki[6] = {-0.01, -0.004, -0.006, -0.01	};
+//float Kd[6] = {-30,   -28,  	-35,    -60 	};
 float err[3] = {0};
 float integral1 = 0;
 /*
@@ -45,6 +52,7 @@ int pid_location(int16_t v,int16_t speed):Î»ÖÃÊ½
 	//
 	float pid_location(float goal,float current)   //
 	{
+		static uint8_t state = 0;
 		float out;
 		float ki_integral1;
 		float err_sum = 0;

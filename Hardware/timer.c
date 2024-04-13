@@ -2,12 +2,19 @@
 
 #define INDEXSIZE 100
 
+#define  B_location 234
+
 extern u8 DataReceivedFlag;
 extern u8 DataTemp[INDEXSIZE];
 extern u8 a[10];
 extern u16 PwmVal;
 extern unsigned int counter;
 extern unsigned char counter_flag;
+extern unsigned int Keep_flag;
+extern unsigned char Keep_time;
+
+
+
 extern float target;
 // Actual Pingpong Location Value
 float number = 0.0;	
@@ -111,6 +118,11 @@ void TIM3_IRQHandler(void)
 		{
 			counter++;
 		}
+		if(Keep_flag){
+			Keep_time ++;
+		}
+		else if(Keep_flag == 0)
+			Keep_time = 0;
 		printf("counter=%d\r\n", counter);
 	}
 
@@ -142,6 +154,10 @@ void TIM5_IRQHandler(void) // 定时器5中断服务函数
 			memset(DataTemp, 0, sizeof(DataTemp));
 			DataReceivedFlag = 0;
 		}
+		if(number * 1000 > B_location)
+			Keep_flag = 0;
+		else 
+			Keep_flag =1;
 		printf("line1=%f,", number * 1000);
 		printf("line2=%f,", target);
 		printf("line3=%f,", number * 1000 - target);

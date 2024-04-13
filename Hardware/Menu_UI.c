@@ -79,7 +79,7 @@ void Menu_Task_4(void){
 	LCD_Clear(WHITE);
 	LCD_ShowString(56,0,16*20,32,32,(uint8_t *)"Task 4 to Test");
 	LCD_ShowString(0,32,16*19,32,32,(uint8_t *)"Keybord input : ");
-	LCD_ShowString(0,32*2+10,16*15,32,32,(uint8_t *)"Aim H:  478mm");
+	LCD_ShowString(0,32*2+10,16*15,32,32,(uint8_t *)"Aim H:  488mm");
 	LCD_ShowString(0,32*3+10,16*9,32,32,(uint8_t *)"Actual H:");
 	LCD_ShowString(0,32*4+20,16*10,32,32,(uint8_t *)"Time (s):");
 //	Task_Choose(4);
@@ -100,7 +100,8 @@ void Menu_Task_6(void){
 	LCD_ShowString(0,32,16*19,32,32,(uint8_t *)"Keybord input : ");
 	LCD_ShowString(0,32*2+10,16*15,32,32,(uint8_t *)"Aim H:     mm");
 	LCD_ShowString(0,32*3+10,16*9,32,32,(uint8_t *)"Actual H:");
-	LCD_ShowString(0,32*4+20,16*10,32,32,(uint8_t *)"Time (s):");
+	LCD_ShowString(0,32*4+20,16*15,32,32,(uint8_t *)"Total Time (s):");
+	LCD_ShowString(0,32*5+25,16*15,32,32,(uint8_t *)"Keep  Time (s):");
 //	Task_Choose(6);
 		Task_id = 6;
 	}
@@ -109,7 +110,8 @@ void Menu_Task_6(void){
 	}
 	LCD_ShowNum(16*6, 32*2+5, 562 - target, 4, 32);
 	LCD_ShowString(16*9,32*3+10,16*10,32,32,(uint8_t *)a);
-	LCD_ShowNum(16*11,32*4+20,counter/2,2,32);
+	LCD_ShowNum(16*16,32*4+20,counter/2,2,32);
+	LCD_ShowNum(16*16,32*5+25,Keep_time/2,2,32);
 	Menu_State = 4;
 }
 

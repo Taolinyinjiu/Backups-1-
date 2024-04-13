@@ -16,7 +16,8 @@ extern uint8_t Task_id;
 extern float target;
 extern float target_Height;
 extern int Key_input;
-
+extern unsigned int Keep_flag;
+extern unsigned char Keep_time;
 
 void Menu_Init(void);
 void Check_Menu(uint8_t State);
