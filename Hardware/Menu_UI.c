@@ -30,7 +30,7 @@ void Check_Menu(uint8_t State){
 void Menu_Task_1_2(void){
 	if(Menu_State != 1){
 	LCD_Clear(WHITE);
-	LCD_ShowString(56,0,16*20,32,32,(uint8_t *)"Task 1&2 to Test");
+	LCD_ShowString(32,0,16*20,32,32,(uint8_t *)"Task 1&2 to Test");
 	LCD_ShowString(0,32,16*19,32,32,(uint8_t *)"Aim Location:B & C");
 	LCD_ShowString(0,32*2+10,16*15,32,32,(uint8_t *)"Aim H: 253 mm");
 	LCD_ShowString(0,32*3+10,16*9,32,32,(uint8_t *)"Actual H:");

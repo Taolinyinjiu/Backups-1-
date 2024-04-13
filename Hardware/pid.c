@@ -17,7 +17,8 @@ unsigned char PID_Sub = 0;
 float Kp[6] = {-2.5,  -2.1,   -2.5,   -2.4 	};
 float Ki[6] = {-0.01, -0.004, -0.006, -0.01	};
 float Kd[6] = {-30,   -28,  	-35,    -60 	};
-
+float err[3] = {0};
+float integral1 = 0;
 /*
 以下为两类pid模板
 int pid_del(int16_t v,int16_t speed) :增量式
@@ -28,7 +29,7 @@ int pid_location(int16_t v,int16_t speed):位置式
 	float pid_increament(float goal,float current)   //ok
 	{
 		static float pid_delta;//
-		static float err[3]={0};//PID差值
+		//static float err[3]={0};//PID差值
 		float Kp = -4.5;
 		float	Ki = -0;
 		float Kd = -0;
@@ -47,8 +48,8 @@ int pid_location(int16_t v,int16_t speed):位置式
 		float out;
 		float ki_integral1;
 		float err_sum = 0;
-		static float integral1;
-		static float err[3]={0};//四个PID差值
+		// static float integral1;
+		//static float err[3]={0};//四个PID差值
 //		float Kp=-1;//-0.91
 //		float	Ki=-0 ;
 //		float Kd=-0 ;//-28

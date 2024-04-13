@@ -69,6 +69,8 @@ extern unsigned char PID_Sub;
 
 uint8_t Task_id = 0;
 int Key_input = 0;
+uint8_t tick = 0;
+
 unsigned char DataReceivedFlag = 0;
 u8 index_Data = 0;
 
@@ -142,21 +144,23 @@ void Clear_L1Mod_Usart()
 
 void Task1_2(float *p, unsigned char *sub)
 {
-	static uint8_t tick = 0;
 	if (tick == 1)
 		return;
+	err[0] = 0;
+	err[1] = 0;
+	err[2] = 0;
+	integral1 = 0;
 	counter = 0;
 	*p = 309;
 	*sub = 0;
 	counter_flag = 1;
-	tick++;
+	tick = 1 ;
 	//	TIM_SetCompare1(TIM11, PwmVal);
 }
 
 void Task3(float *p, unsigned char *sub)
 {
-	static uint8_t tick = 0;
-	if (tick == 0)
+	if (tick != 2)
 	{
 		counter = 0;
 		*p = 999;
@@ -184,30 +188,28 @@ void Task3(float *p, unsigned char *sub)
 	}
 	else if (Key_Read() == 8)
 	{
-		delay_ms(500);
+		delay_ms(300);
 		if (Key_Read() == 8)
 			*p = C_bisic - Key_input;
 	}
-	tick = 1;
+	tick = 2;
 }
 
 void Task4(float *p, unsigned char *sub)
 {
-	static uint8_t tick = 0;
-	if (tick == 1)
+	if (tick == 3)
 		return;
 	counter = 0;
 	*p = 84;
 	*sub = 1;
 	counter_flag = 1;
-	tick++;
+	tick = 3;
 	//	TIM_SetCompare1(TIM11, PwmVal);
 }
 
 void Task6(float *p, unsigned char *sub)
 {
-	static uint8_t tick = 0;
-	if (tick == 1)
+	if (tick == 4)
 		return;
 	unsigned int time_temp = 0;
 	counter = 0;
@@ -230,7 +232,7 @@ void Task6(float *p, unsigned char *sub)
 	while (counter - time_temp <= 9)
 		;
 	*p = 0;
-	tick++;
+	tick = 4;
 }
 
 char buffer_test = 0;
@@ -331,6 +333,7 @@ void Task_Choose(uint8_t ID)
 	{
 	case 0:
 		target = 999;
+		tick = 0;
 		break;
 	case 1:
 		Task1_2(&target, &PID_Sub);
