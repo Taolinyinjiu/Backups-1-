@@ -91,6 +91,8 @@ void E5_Init(void)
 	GPIO_Init(GPIOF, &GPIO_InitStructure);			   // 初始化PF6
 }
 
+//Github Test
+
 int main(void)
 {
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); // 中断优先级分�?�?�?
