@@ -3,6 +3,8 @@
 #define INDEXSIZE 100
 
 #define  B_location 234
+#define  C_location 384
+#define  D_location 534
 
 extern u8 DataReceivedFlag;
 extern u8 DataTemp[INDEXSIZE];
@@ -12,7 +14,7 @@ extern unsigned int counter;
 extern unsigned char counter_flag;
 extern unsigned int Keep_flag;
 extern unsigned char Keep_time;
-
+extern uint8_t Keep_state;
 
 
 extern float target;
@@ -118,10 +120,10 @@ void TIM3_IRQHandler(void)
 		{
 			counter++;
 		}
-		if(Keep_flag){
+		if(Check_KeepState(Keep_state)){
 			Keep_time ++;
 		}
-		else if(Keep_flag == 0)
+		else
 			Keep_time = 0;
 		printf("counter=%d\r\n", counter);
 	}
@@ -181,3 +183,15 @@ void TIM5_IRQHandler(void) // 定时器5中断服务函数
 }
 //
 
+uint8_t Check_KeepState(uint8_t state){
+	if(state == 0){
+		if(number * 1000 < B_location)
+			return 1;
+		else return 0;
+	}
+	else if(state == 1){
+		if(number * 1000 < D_location && number * 1000 > C_location)
+			return 1;
+		else return 0;
+	}
+}

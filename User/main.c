@@ -74,6 +74,8 @@ extern unsigned char PID_Sub;
 uint8_t Task_id = 0;
 int Key_input = 0;
 uint8_t tick = 0;
+uint8_t Keep_state = 0;
+
 
 unsigned char DataReceivedFlag = 0;
 u8 index_Data = 0;
@@ -108,7 +110,7 @@ int main(void)
 	Menu_Init();
 	Switch_Init();
 	Key_Init();
-	TIM11_PWM_Init(2000 - 1, 3 - 1);
+	TIM11_PWM_Init(2000- 1, 3 - 1);
 	TIM3_Init(5000 - 1, 8400 - 1);
 	TIM5_calc_init();
 	TIM6_Init();
@@ -155,7 +157,7 @@ void Task1_2(float *p, unsigned char *sub)
 	err[2] = 0;
 	integral1 = 0;
 	counter = 0;
-	*p = 309;
+	*p = 305;
 	*sub = 0;//第一个参
 	counter_flag = 1;
 	tick = 1 ;
@@ -226,22 +228,26 @@ void Task6(float *p, unsigned char *sub)
 	*sub = 2;//第三个参
 	counter_flag = 1;
 	*p = 159;
+	Keep_state = 0;
 	time_temp = counter;
 	while (counter - time_temp <= 9)
 		;
 	*p = 459;
+	Keep_state = 1;
 	time_temp = counter;
-//	while (counter - time_temp <= 9)
-//		;
-//	*p = 159;
-//	time_temp = counter;
-//	while (counter - time_temp <= 9)
-//		;
-//	*p = 459;
-//	time_temp = counter;
-//	while (counter - time_temp <= 9)
-//		;
-//	*p = 0;
+	while (counter - time_temp <= 9)
+		;
+	*p = 159;
+	time_temp = counter;
+	Keep_state = 0;
+	while (counter - time_temp <= 9)
+		;
+	*p = 459;
+	time_temp = counter;
+	Keep_state = 1;
+	while (counter - time_temp <= 9)
+		;
+	*p = 0;
 	tick = 4;
 }
 

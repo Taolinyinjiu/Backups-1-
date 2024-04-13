@@ -12,6 +12,7 @@
 void TIM3_Init(u16 arr, u16 psc);
 void TIM5_calc_init(void);//(5000,84)Ϊ0.005s��5ms��
 void TIM6_Init(void);
+uint8_t Check_KeepState(uint8_t state);
 
 #endif
 
