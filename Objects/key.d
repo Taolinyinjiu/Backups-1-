@@ -2,7 +2,7 @@
 .\objects\key.o: .\Hardware\Hardware_H\key.h
 .\objects\key.o: .\User\stm32f4xx.h
 .\objects\key.o: .\Core\core_cm4.h
-.\objects\key.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\key.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\key.o: .\Core\core_cmInstr.h
 .\objects\key.o: .\Core\core_cmFunc.h
 .\objects\key.o: .\Core\core_cm4_simd.h

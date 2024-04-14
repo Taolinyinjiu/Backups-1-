@@ -3,7 +3,7 @@
 .\objects\ms53l1m.o: .\System\sys\sys.h
 .\objects\ms53l1m.o: .\User\stm32f4xx.h
 .\objects\ms53l1m.o: .\Core\core_cm4.h
-.\objects\ms53l1m.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\ms53l1m.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\ms53l1m.o: .\Core\core_cmInstr.h
 .\objects\ms53l1m.o: .\Core\core_cmFunc.h
 .\objects\ms53l1m.o: .\Core\core_cm4_simd.h
@@ -36,13 +36,13 @@
 .\objects\ms53l1m.o: .\Library\inc\stm32f4xx_dac.h
 .\objects\ms53l1m.o: .\Library\inc\stm32f4xx_dcmi.h
 .\objects\ms53l1m.o: .\Library\inc\stm32f4xx_fsmc.h
-.\objects\ms53l1m.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\ms53l1m.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\ms53l1m.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\ms53l1m.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\string.h
 .\objects\ms53l1m.o: .\System\usart\usart.h
-.\objects\ms53l1m.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\ms53l1m.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\ms53l1m.o: .\DRIVE\DRIVE_h\isr.h
 .\objects\ms53l1m.o: .\Hardware\Hardware_H\lcd.h
-.\objects\ms53l1m.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\ms53l1m.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\ms53l1m.o: .\System\delay\delay.h
 .\objects\ms53l1m.o: .\Hardware\Hardware_H\led.h
 .\objects\ms53l1m.o: .\Hardware\Hardware_H\display.h

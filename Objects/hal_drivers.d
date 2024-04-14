@@ -1,10 +1,10 @@
 .\objects\hal_drivers.o: Hardware\L1-40\hal_drivers.c
-.\objects\hal_drivers.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\hal_drivers.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\string.h
 .\objects\hal_drivers.o: Hardware\L1-40\hal_drivers.h
 .\objects\hal_drivers.o: .\Library\inc\stm32f4xx_usart.h
 .\objects\hal_drivers.o: .\User\stm32f4xx.h
 .\objects\hal_drivers.o: .\Core\core_cm4.h
-.\objects\hal_drivers.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\hal_drivers.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\hal_drivers.o: .\Core\core_cmInstr.h
 .\objects\hal_drivers.o: .\Core\core_cmFunc.h
 .\objects\hal_drivers.o: .\Core\core_cm4_simd.h
@@ -39,4 +39,4 @@
 .\objects\hal_drivers.o: .\Library\inc\stm32f4xx_fsmc.h
 .\objects\hal_drivers.o: .\Hardware\Hardware_H\lcd.h
 .\objects\hal_drivers.o: .\System\sys\sys.h
-.\objects\hal_drivers.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\hal_drivers.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdlib.h

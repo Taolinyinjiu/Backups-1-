@@ -1,7 +1,7 @@
 .\objects\system_stm32f4xx.o: User\system_stm32f4xx.c
 .\objects\system_stm32f4xx.o: User\stm32f4xx.h
 .\objects\system_stm32f4xx.o: .\Core\core_cm4.h
-.\objects\system_stm32f4xx.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\system_stm32f4xx.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\system_stm32f4xx.o: .\Core\core_cmInstr.h
 .\objects\system_stm32f4xx.o: .\Core\core_cmFunc.h
 .\objects\system_stm32f4xx.o: .\Core\core_cm4_simd.h

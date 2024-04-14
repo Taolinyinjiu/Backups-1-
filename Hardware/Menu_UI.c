@@ -59,9 +59,12 @@ void Menu_Task_3(void){
 		Task_id = 3;
 	}
 	if(DataReceivedFlag == 0){
-	sprintf(a, " %.2f mm",562 - number * 1000);
+	sprintf(a, " %.2f mm",354 - number * 1000);
 	}
-	LCD_ShowNum(16*6, 32*2+5, target, 4, 32);
+	//LCD_ShowNum(16*6, 32*2+10, target - 354 + Key_input, 4, 32);
+	if(counter_flag == 0){
+		LCD_ShowNum(16*6, 32*2+10, Key_input, 4, 32);
+	}
 	LCD_ShowString(16*9,32*3+10,16*10,32,32,(uint8_t *)a);
 	if(Key_input >= 0){
 		LCD_ShowChar(16*15,32,' ',32,0);

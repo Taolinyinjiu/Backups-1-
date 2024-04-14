@@ -1,13 +1,13 @@
 .\objects\asciiprotocol.o: Hardware\L1-40\ASCIIProtocol.c
-.\objects\asciiprotocol.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\asciiprotocol.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\asciiprotocol.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\asciiprotocol.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\string.h
 .\objects\asciiprotocol.o: Hardware\L1-40\ASCIIProtocol.h
-.\objects\asciiprotocol.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\asciiprotocol.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\asciiprotocol.o: Hardware\L1-40\hal_drivers.h
 .\objects\asciiprotocol.o: .\Library\inc\stm32f4xx_usart.h
 .\objects\asciiprotocol.o: .\User\stm32f4xx.h
 .\objects\asciiprotocol.o: .\Core\core_cm4.h
-.\objects\asciiprotocol.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\asciiprotocol.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\asciiprotocol.o: .\Core\core_cmInstr.h
 .\objects\asciiprotocol.o: .\Core\core_cmFunc.h
 .\objects\asciiprotocol.o: .\Core\core_cm4_simd.h

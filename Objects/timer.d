@@ -3,7 +3,7 @@
 .\objects\timer.o: .\System\sys\sys.h
 .\objects\timer.o: .\User\stm32f4xx.h
 .\objects\timer.o: .\Core\core_cm4.h
-.\objects\timer.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\timer.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\timer.o: .\Core\core_cmInstr.h
 .\objects\timer.o: .\Core\core_cmFunc.h
 .\objects\timer.o: .\Core\core_cm4_simd.h
@@ -38,7 +38,7 @@
 .\objects\timer.o: .\Library\inc\stm32f4xx_fsmc.h
 .\objects\timer.o: .\Hardware\Hardware_H\encode_init.h
 .\objects\timer.o: .\Hardware\Hardware_H\lcd.h
-.\objects\timer.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\timer.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\timer.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\timer.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\timer.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\timer.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\string.h
 .\objects\timer.o: .\Hardware\Hardware_H\pid.h

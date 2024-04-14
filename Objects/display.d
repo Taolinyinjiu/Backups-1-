@@ -3,7 +3,7 @@
 .\objects\display.o: .\System\sys\sys.h
 .\objects\display.o: .\User\stm32f4xx.h
 .\objects\display.o: .\Core\core_cm4.h
-.\objects\display.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\display.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\display.o: .\Core\core_cmInstr.h
 .\objects\display.o: .\Core\core_cmFunc.h
 .\objects\display.o: .\Core\core_cm4_simd.h
@@ -37,13 +37,13 @@
 .\objects\display.o: .\Library\inc\stm32f4xx_dcmi.h
 .\objects\display.o: .\Library\inc\stm32f4xx_fsmc.h
 .\objects\display.o: .\Hardware\Hardware_H\lcd.h
-.\objects\display.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\display.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\display.o: .\Hardware\Hardware_H\timer.h
 .\objects\display.o: .\Hardware\Hardware_H\encode_init.h
-.\objects\display.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\display.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\display.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\display.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\string.h
 .\objects\display.o: .\Hardware\Hardware_H\pid.h
 .\objects\display.o: .\Hardware\Hardware_H\ms53l1m.h
-.\objects\display.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\display.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\display.o: .\Hardware\Hardware_H\wit_c_sdk.h
 .\objects\display.o: .\DRIVE\DRIVE_h\REG.h

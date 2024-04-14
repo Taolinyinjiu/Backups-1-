@@ -3,7 +3,7 @@
 .\objects\encode_init.o: .\System\sys\sys.h
 .\objects\encode_init.o: .\User\stm32f4xx.h
 .\objects\encode_init.o: .\Core\core_cm4.h
-.\objects\encode_init.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\encode_init.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\encode_init.o: .\Core\core_cmInstr.h
 .\objects\encode_init.o: .\Core\core_cmFunc.h
 .\objects\encode_init.o: .\Core\core_cm4_simd.h

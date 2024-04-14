@@ -55,10 +55,11 @@ static unsigned int gdistance = 0;
 static int gbytes = 0;
 static unsigned char gcmd[32] = {0};
 u8 DataTemp[INDEXSIZE] = {0};
+u8 ESPDataTemp[100] = {0};
 u16 PwmVal = 0;
 int flag = 0;
 float target = 999;
-float C_bisic = 384;
+float C_bisic = 354;
 float target_Height = 0;
 unsigned int counter = 0;
 unsigned char counter_flag = 0;
@@ -71,6 +72,8 @@ extern float number;
 extern unsigned char PID_Sub;
 // static unsigned int t1 = 0;
 
+uint8_t NO_PID = 0;
+
 uint8_t Task_id = 0;
 int Key_input = 0;
 uint8_t tick = 0;
@@ -78,12 +81,15 @@ uint8_t Keep_state = 0;
 
 
 unsigned char DataReceivedFlag = 0;
+unsigned char ESPDataReceivedFlag = 0;
 u8 index_Data = 0;
+u8 u5_index = 0;
 
 void Task1_2(float *p, unsigned char *sub);
 void Task3(float *p, unsigned char *sub);
 void Task4(float *p, unsigned char *sub);
 void Task6(float *p, unsigned char *sub);
+void Task_fuck(float *p,unsigned char *sub);
 
 void E5_Init(void)
 {
@@ -106,11 +112,12 @@ int main(void)
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); // 中断优先级分�?�?�?
 	delay_init(168);
 	Init_Drivers();
+	uart5_init(115200);
 	// uart1_init(115200);
 	Menu_Init();
 	Switch_Init();
 	Key_Init();
-	TIM11_PWM_Init(2000- 1, 3 - 1);
+	TIM11_PWM_Init(10000- 1, 1 - 1);
 	TIM3_Init(5000 - 1, 8400 - 1);
 	TIM5_calc_init();
 	TIM6_Init();
@@ -121,9 +128,9 @@ int main(void)
 	Clear_L1Mod_Usart();
 	Fast_Conti_Meas_Cmd();
 	// delay_ms(1000);
-	TIM_SetCompare1(TIM11, 1105);
+	//TIM_SetCompare1(TIM11, 1900);
 	//	LCD_ShowString(30, 50, 210, 24, 24, "Dis=");
-
+	TIM_SetCompare1(TIM11, 0);
 	//
 
 	while (1)
@@ -157,11 +164,47 @@ void Task1_2(float *p, unsigned char *sub)
 	err[2] = 0;
 	integral1 = 0;
 	counter = 0;
-	*p = 305;
+	*p = 279;
+	//*p = C_bisic;
 	*sub = 0;//第一个参
 	counter_flag = 1;
 	tick = 1 ;
 	//	TIM_SetCompare1(TIM11, PwmVal);
+}
+
+void Task_fuck(float *p,unsigned char *sub){
+	Key_input = 0;
+	while(*p == 999){
+		counter_flag = 0;
+	if (Key_Read() == 1)
+	{
+		delay_ms(100);
+		if (Key_Read() == 1)
+			Key_input += 1;
+	}
+	else if (Key_Read() == 2)
+	{
+		delay_ms(100);
+		if (Key_Read() == 2)
+			Key_input -= 1;
+	}
+	else if (Key_Read() == 8)
+	{
+		delay_ms(300);
+		if (Key_Read() == 8)
+			*p = C_bisic - Key_input;
+	}}
+	//*p = C_bisic;
+	*sub = 0;//第一个参
+	if (tick != 9 && *p != 999){
+	err[0] = 0;
+	err[1] = 0;
+	err[2] = 0;
+	integral1 = 0;
+	counter_flag = 1;
+	counter = 0;
+	}
+	tick = 9 ;
 }
 
 void Task3(float *p, unsigned char *sub)
@@ -174,6 +217,8 @@ void Task3(float *p, unsigned char *sub)
 	err[0] = 0;
 	err[1] = 0;
 	err[2] = 0;
+	counter = 0;
+	integral1 =0;
 	counter_flag = 1;
 	*sub = 3;//第四个参
 	if (Key_Read() == 1)
@@ -192,6 +237,7 @@ void Task3(float *p, unsigned char *sub)
 	{		delay_ms(20);
 		if (Key_Read() == 4)
 		{
+			
 		}
 		//			*p = target_Height;
 	}
@@ -200,6 +246,7 @@ void Task3(float *p, unsigned char *sub)
 		delay_ms(300);
 		if (Key_Read() == 8)
 			*p = C_bisic - Key_input;
+		//*p = 350;
 	}
 	tick = 2;
 }
@@ -212,10 +259,13 @@ void Task4(float *p, unsigned char *sub)
 	err[1] = 0;
 	err[2] = 0;
 	counter = 0;
-	*p = 75;
+	*p = 50;
 	*sub = 1;//第二个参
+	NO_PID = 2;
 	counter_flag = 1;
 	tick = 3;
+	delay_ms(5000);
+	NO_PID = 0;
 	//	TIM_SetCompare1(TIM11, PwmVal);
 }
 
@@ -232,6 +282,8 @@ void Task6(float *p, unsigned char *sub)
 	time_temp = counter;
 	while (counter - time_temp <= 9)
 		;
+	*p = 350;
+	delay_ms(1000);
 	*p = 459;
 	Keep_state = 1;
 	time_temp = counter;
@@ -242,17 +294,46 @@ void Task6(float *p, unsigned char *sub)
 	Keep_state = 0;
 	while (counter - time_temp <= 9)
 		;
-	*p = 459;
+	*p = 330;
+	delay_ms(1000);
+	*p = 430;
 	time_temp = counter;
 	Keep_state = 1;
 	while (counter - time_temp <= 9)
 		;
-	*p = 0;
+	NO_PID = 1 ;
+	delay_ms(1000);
+	NO_PID = 0;
 	tick = 4;
 }
 
 char buffer_test = 0;
 // u8 count = 0;
+
+void UART5_IRQHandler(void)
+{
+	unsigned char ch = 0;
+	int length = 0;
+
+	if (USART_GetITStatus(UART5, USART_IT_RXNE) != RESET)
+	{
+		ch = USART_ReceiveData(UART5);
+		//		printf("ch = %c", ch);
+		//		if(g_L1Mod_node.type == 1)//ASCII连续测量和快速连续测�?
+		//		{
+		ESPDataTemp[u5_index] = ch;
+		u5_index++;
+		if (ch == '\n' || index_Data >= INDEXSIZE - 1)
+		//			if(index == 8)
+		{
+			ESPDataTemp[u5_index] = '\0';
+			printf("%s", ESPDataTemp);
+			ESPDataReceivedFlag = 1;
+			u5_index = 0;
+		}
+		USART_ClearITPendingBit(UART5, USART_IT_RXNE);
+	}
+}
 
 void USART6_IRQHandler(void)
 {
@@ -355,7 +436,7 @@ void Task_Choose(uint8_t ID)
 		Task1_2(&target, &PID_Sub);
 		break;
 	case 3:
-		Task3(&target, &PID_Sub);
+		Task_fuck(&target, &PID_Sub);
 		break;
 	case 4:
 		Task4(&target, &PID_Sub);

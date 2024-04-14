@@ -4,21 +4,22 @@
 #define integral1_max 300
 #define v_max 3000
 
-#define balance 1200
+#define balance 950
 u32 errmax = 530;
 int errmin = -530;
 
 unsigned char PID_Sub = 0;
 
 
-
 //float Kp[6] = {-0.802,   };
 //float Ki[6] = {-0.0081, };
 //float Kd[6] = {-24,  };
 
-float Kp[6] = {-3.0,    -2.0,   -2.5,     -5 	};//3:-1.75,-0.01,-15.0
-float Ki[6] = {-0.03, -0.01,  -0.01,    -0.02	};
-float Kd[6] = {-40.0,     -50,    -35.0,    0.2 	};
+// -5 -0.0010009,4.001
+
+float Kp[6] = {-3.3,    -2.0,   -3.3,     -3.6 	};//3:-1.75,-0.01,-15.0
+float Ki[6] = {-0.0013, -0.01,  -0.005,    -0.001};
+float Kd[6] = {-121.0,     -50,    -100.0,    -120.0	};
 
 
 //float Kp[6] = {-2.5,  -2.1,   -2.5,   -2.4 	};
@@ -77,8 +78,12 @@ int pid_location(int16_t v,int16_t speed):Î»ÖÃÊ½
 		out = (float)(Kp[PID_Sub] * (float)err[0] + Ki[PID_Sub] * integral1 + Kd[PID_Sub] * (err[0] - err[1]));
 		if(out>SPEED_PID_MAX)out=SPEED_PID_MAX;
 		else if(out<-SPEED_PID_MAX)out=-SPEED_PID_MAX;
-		
-		out += balance;
+		if(NO_PID == 1)
+			out = 10000;
+		else if (NO_PID == 2)
+			out = 1200;
+		else if(NO_PID == 0)
+			out += balance;
 //		out = 0;
 		return out;
 	}

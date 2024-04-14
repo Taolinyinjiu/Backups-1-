@@ -3,7 +3,7 @@
 .\objects\lcd.o: .\System\sys\sys.h
 .\objects\lcd.o: .\User\stm32f4xx.h
 .\objects\lcd.o: .\Core\core_cm4.h
-.\objects\lcd.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lcd.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\lcd.o: .\Core\core_cmInstr.h
 .\objects\lcd.o: .\Core\core_cmFunc.h
 .\objects\lcd.o: .\Core\core_cm4_simd.h
@@ -36,9 +36,9 @@
 .\objects\lcd.o: .\Library\inc\stm32f4xx_dac.h
 .\objects\lcd.o: .\Library\inc\stm32f4xx_dcmi.h
 .\objects\lcd.o: .\Library\inc\stm32f4xx_fsmc.h
-.\objects\lcd.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\lcd.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\lcd.o: .\DRIVE\DRIVE_h\font.h
 .\objects\lcd.o: .\System\usart\usart.h
-.\objects\lcd.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\lcd.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\lcd.o: .\DRIVE\DRIVE_h\isr.h
 .\objects\lcd.o: .\System\delay\delay.h
