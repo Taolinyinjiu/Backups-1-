@@ -1,20 +1,20 @@
 /*
-				   _ooOoo_
-				  o8888888o
-				  88" . "88
-				  (| -_- |)
-				  O\  =  /O
-			   ____/`---'\____
-			 .'  \\|     |//  `.
-			/  \\|||  :  |||//  \
-		   /  _||||| -:- |||||-  \
-		   |   | \\\  -  /// |   |
-		   | \_|  ''\---/''  |   |
-		   \  .-\__  `-`  ___/-. /
-		 ___`. .'  /--.--\  `. . __
-	  ."" '<  `.___\_<|>_/___.'  >'"".
-	 | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-	 \  \ `-.   \_ __\ /__ _/   .-` /  /
+									 _ooOoo_
+									o8888888o
+									88" . "88
+									(| -_- |)
+									O\  =  /O
+							 ____/`---'\____
+						 .'  \\|     |//  `.
+						/  \\|||  :  |||//  \
+					 /  _||||| -:- |||||-  \
+					 |   | \\\  -  /// |   |
+					 | \_|  ''\---/''  |   |
+					 \  .-\__  `-`  ___/-. /
+				 ___`. .'  /--.--\  `. . __
+			."" '<  `.___\_<|>_/___.'  >'"".
+		 | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+		 \  \ `-.   \_ __\ /__ _/   .-` /  /
 ======`-.____`-.___\_____/___.-`____.-'======
 				   `=---='
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -258,6 +258,7 @@ void Task4(float *p, unsigned char *sub)
 	err[0] = 0;
 	err[1] = 0;
 	err[2] = 0;
+	integral1 = 0;
 	counter = 0;
 	*p = 50;
 	*sub = 1;//第二个参
@@ -271,6 +272,12 @@ void Task4(float *p, unsigned char *sub)
 
 void Task6(float *p, unsigned char *sub)
 {
+	err[0] = 0;
+	err[1] = 0;
+	err[2] = 0;
+	integral1 = 0;
+	counter_flag = 1;
+	counter = 0;
 	if (tick == 4)
 		return;
 	unsigned int time_temp = 0;
@@ -308,32 +315,32 @@ void Task6(float *p, unsigned char *sub)
 }
 
 char buffer_test = 0;
-// u8 count = 0;
+ u8 count = 0;
 
-void UART5_IRQHandler(void)
-{
-	unsigned char ch = 0;
-	int length = 0;
+//void UART5_IRQHandler(void)
+//{
+//	unsigned char ch = 0;
+//	int length = 0;
 
-	if (USART_GetITStatus(UART5, USART_IT_RXNE) != RESET)
-	{
-		ch = USART_ReceiveData(UART5);
-		//		printf("ch = %c", ch);
-		//		if(g_L1Mod_node.type == 1)//ASCII连续测量和快速连续测�?
-		//		{
-		ESPDataTemp[u5_index] = ch;
-		u5_index++;
-		if (ch == '\n' || index_Data >= INDEXSIZE - 1)
-		//			if(index == 8)
-		{
-			ESPDataTemp[u5_index] = '\0';
-			printf("%s", ESPDataTemp);
-			ESPDataReceivedFlag = 1;
-			u5_index = 0;
-		}
-		USART_ClearITPendingBit(UART5, USART_IT_RXNE);
-	}
-}
+//	if (USART_GetITStatus(UART5, USART_IT_RXNE) != RESET)
+//	{
+//		ch = USART_ReceiveData(UART5);
+//		//		printf("ch = %c", ch);
+//		//		if(g_L1Mod_node.type == 1)//ASCII连续测量和快速连续测�?
+//		//		{
+//		ESPDataTemp[u5_index] = ch;
+//		u5_index++;
+//		if (ch == '\n' || index_Data >= INDEXSIZE - 1)
+//		//			if(index == 8)
+//		{
+//			ESPDataTemp[u5_index] = '\0';
+//			printf("%s", ESPDataTemp);
+//			ESPDataReceivedFlag = 1;
+//			u5_index = 0;
+//		}
+//		USART_ClearITPendingBit(UART5, USART_IT_RXNE);
+//	}
+//}
 
 void USART6_IRQHandler(void)
 {

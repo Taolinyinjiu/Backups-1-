@@ -1,11 +1,11 @@
 .\objects\usart.o: System\usart\usart.c
 .\objects\usart.o: System\usart\usart.h
-.\objects\usart.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\usart.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\usart.o: .\User\stm32f4xx_conf.h
 .\objects\usart.o: .\Library\inc\stm32f4xx_adc.h
 .\objects\usart.o: .\User\stm32f4xx.h
 .\objects\usart.o: .\Core\core_cm4.h
-.\objects\usart.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usart.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\usart.o: .\Core\core_cmInstr.h
 .\objects\usart.o: .\Core\core_cmFunc.h
 .\objects\usart.o: .\Core\core_cm4_simd.h
@@ -39,9 +39,9 @@
 .\objects\usart.o: .\System\sys\sys.h
 .\objects\usart.o: .\DRIVE\DRIVE_h\isr.h
 .\objects\usart.o: .\Hardware\Hardware_H\lcd.h
-.\objects\usart.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\usart.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\usart.o: .\Hardware\Hardware_H\ms53l1m.h
-.\objects\usart.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\usart.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\usart.o: .\Hardware\Hardware_H\wit_c_sdk.h
-.\objects\usart.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\string.h
+.\objects\usart.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\usart.o: .\DRIVE\DRIVE_h\REG.h

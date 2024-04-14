@@ -1,8 +1,8 @@
 .\objects\wit_c_sdk.o: Hardware\wit_c_sdk.c
 .\objects\wit_c_sdk.o: .\Hardware\Hardware_H\wit_c_sdk.h
-.\objects\wit_c_sdk.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\wit_c_sdk.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\wit_c_sdk.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\string.h
+.\objects\wit_c_sdk.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\wit_c_sdk.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\wit_c_sdk.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\wit_c_sdk.o: .\DRIVE\DRIVE_h\REG.h
 .\objects\wit_c_sdk.o: .\System\usart\usart.h
 .\objects\wit_c_sdk.o: .\User\stm32f4xx_conf.h
@@ -42,5 +42,5 @@
 .\objects\wit_c_sdk.o: .\System\sys\sys.h
 .\objects\wit_c_sdk.o: .\DRIVE\DRIVE_h\isr.h
 .\objects\wit_c_sdk.o: .\Hardware\Hardware_H\lcd.h
-.\objects\wit_c_sdk.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\wit_c_sdk.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\wit_c_sdk.o: .\System\delay\delay.h

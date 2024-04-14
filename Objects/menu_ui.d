@@ -2,7 +2,7 @@
 .\objects\menu_ui.o: Hardware\Menu_UI.h
 .\objects\menu_ui.o: .\User\stm32f4xx.h
 .\objects\menu_ui.o: .\Core\core_cm4.h
-.\objects\menu_ui.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\menu_ui.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\menu_ui.o: .\Core\core_cmInstr.h
 .\objects\menu_ui.o: .\Core\core_cmFunc.h
 .\objects\menu_ui.o: .\Core\core_cm4_simd.h
@@ -36,10 +36,10 @@
 .\objects\menu_ui.o: .\Library\inc\stm32f4xx_dcmi.h
 .\objects\menu_ui.o: .\Library\inc\stm32f4xx_fsmc.h
 .\objects\menu_ui.o: .\User\main.h
-.\objects\menu_ui.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\menu_ui.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\menu_ui.o: .\Hardware\Hardware_H\LCD.h
 .\objects\menu_ui.o: .\System\sys\sys.h
-.\objects\menu_ui.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\menu_ui.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\menu_ui.o: .\System\delay\delay.h
 .\objects\menu_ui.o: Hardware\Switch.h
 .\objects\menu_ui.o: .\Hardware\Hardware_H\key.h

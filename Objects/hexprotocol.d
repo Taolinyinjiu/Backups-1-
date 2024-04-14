@@ -1,11 +1,11 @@
 .\objects\hexprotocol.o: Hardware\L1-40\HEXProtocol.c
 .\objects\hexprotocol.o: Hardware\L1-40\HEXProtocol.h
-.\objects\hexprotocol.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\hexprotocol.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\hexprotocol.o: Hardware\L1-40\hal_drivers.h
 .\objects\hexprotocol.o: .\Library\inc\stm32f4xx_usart.h
 .\objects\hexprotocol.o: .\User\stm32f4xx.h
 .\objects\hexprotocol.o: .\Core\core_cm4.h
-.\objects\hexprotocol.o: D:\Keil_Core\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\hexprotocol.o: E:\Keil5\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\hexprotocol.o: .\Core\core_cmInstr.h
 .\objects\hexprotocol.o: .\Core\core_cmFunc.h
 .\objects\hexprotocol.o: .\Core\core_cm4_simd.h
